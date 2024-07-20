@@ -1,6 +1,6 @@
 import express from "express";
 import "body-parser";
-import findNearestRanks from "./a.js";
+import findNearestRanks from "./nearestRank.js";
 const app = express();
 const PORT = process.env.PORT || 3000;
 // Middleware
