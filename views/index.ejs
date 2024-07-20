@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Search</title>
+	<link rel="stylesheet" href="../public/css/style.css">
+</head>
+<body>
+    <h1 id="head">College Search</h1>
+    <form id="collegeForm" action="/colleges" method="POST">
+        <label for="rank">Rank:</label>
+        <input type="number" id="rank" name="rank" value="<%= rank %>" required /><br /><br />
+
+        <label for="caste">Caste:</label>
+        <select name="caste" id="caste">
+            <option value="SM" <%= caste === 'SM' ? 'selected' : '' %>>SM</option>
+            <option value="EW" <%= caste === 'EW' ? 'selected' : '' %>>EW</option>
+            <option value="EZ" <%= caste === 'EZ' ? 'selected' : '' %>>EZ</option>
+            <option value="MU" <%= caste === 'MU' ? 'selected' : '' %>>MU</option>
+            <option value="BH" <%= caste === 'BH' ? 'selected' : '' %>>BH</option>
+            <option value="LA" <%= caste === 'LA' ? 'selected' : '' %>>LA</option>
+            <option value="SC" <%= caste === 'SC' ? 'selected' : '' %>>SC</option>
+            <option value="ST" <%= caste === 'ST' ? 'selected' : '' %>>ST</option>
+            <option value="DV" <%= caste === 'DV' ? 'selected' : '' %>>DV</option>
+            <option value="KU" <%= caste === 'KU' ? 'selected' : '' %>>KU</option>
+            <option value="KN" <%= caste === 'KN' ? 'selected' : '' %>>KN</option>
+            <option value="VK" <%= caste === 'VK' ? 'selected' : '' %>>VK</option>
+            <option value="BX" <%= caste === 'BX' ? 'selected' : '' %>>BX</option>
+            <option value="FW" <%= caste === 'FW' ? 'selected' : '' %>>FW</option>
+            <option value="SD" <%= caste === 'SD' ? 'selected' : '' %>>SD</option>
+            <option value="MG" <%= caste === 'MG' ? 'selected' : '' %>>MG</option>
+            <option value="CC" <%= caste === 'CC' ? 'selected' : '' %>>CC</option>
+            <option value="XS" <%= caste === 'XS' ? 'selected' : '' %>>XS</option>
+            <option value="PD" <%= caste === 'PD' ? 'selected' : '' %>>PD</option>
+            <option value="RP" <%= caste === 'RP' ? 'selected' : '' %>>RP</option>
+            <option value="DI" <%= caste === 'DI' ? 'selected' : '' %>>DI</option>
+        </select>
+
+        <label for="course">Course:</label>
+        <select name="course" id="course">
+            <option value="aiad" <%= course === 'aiad' ? 'selected' : '' %>>Artificial Intelligence And Data Science</option>
+            <option value="aeai" <%= course === 'aeai' ? 'selected' : '' %>>Applied Electronics And Instrumentation</option>
+            <option value="bae" <%= course === 'bae' ? 'selected' : '' %>>B.Tech.(Agricultural Engg)</option>
+            <option value="ae" <%= course === 'ae' ? 'selected' : '' %>>Automobile Engineering</option>
+            <option value="btabce" <%= course === 'btabce' ? 'selected' : '' %>>Bio Technology And Biochemical Engg</option>
+            <option value="csaeabs" <%= course === 'csaeabs' ? 'selected' : '' %>>Computer Science And Engineering And Business Systems</option>
+            <option value="csaebc" <%= course === 'csaebc' ? 'selected' : '' %>>Computer Science And Engineering (Block Chain)</option>
+            <option value="bme" <%= course === 'bme' ? 'selected' : '' %>>Bio Medical Engineering</option>
+            <option value="bt" <%= course === 'bt' ? 'selected' : '' %>>Bio Technology</option>
+            <option value="ce" <%= course === 'ce' ? 'selected' : '' %>>Civil Engineering</option>
+            <option value="csad" <%= course === 'csad' ? 'selected' : '' %>>Computer Science & Design</option>
+            <option value="che" <%= course === 'che' ? 'selected' : '' %>>Chemical Engineering</option>
+            <option value="csaeaiaml" <%= course === 'csaeaiaml' ? 'selected' : '' %>>Computer Science & Engg (Artificial Intelligence & Machine Learning)</option>
+            <option value="csaeds" <%= course === 'csaeds' ? 'selected' : '' %>>Computer Science & Engineering (Data Science)</option>
+            <option value="csae" <%= course === 'csae' ? 'selected' : '' %>>Computer Science And Engineering</option>
+            <option value="csaeai" <%= course === 'csaeai' ? 'selected' : '' %>>Computer Science & Engineering (Artificial Intelligence)</option>
+            <option value="csabs" <%= course === 'csabs' ? 'selected' : '' %>>Computer Science And Business Systems</option>
+            <option value="caee" <%= course === 'caee' ? 'selected' : '' %>>Civil And Environmental Engineering</option>
+            <option value="csaecs" <%= course === 'csaecs' ? 'selected' : '' %>>Computer Science And Engineering (Cyber Security)</option>
+            <option value="dt" <%= course === 'dt' ? 'selected' : '' %>>Dairy Technology</option>
+            <option value="eacact" <%= course === 'eacact' ? 'selected' : '' %>>Electronics And Communication (Advanced Communication Technology)</option>
+            <option value="eabme" <%= course === 'eabme' ? 'selected' : '' %>>Electronics & Biomedical Engineering</option>
+            <option value="ece" <%= course === 'ece' ? 'selected' : '' %>>Electronics & Communication Engineering</option>
+            <option value="eaee" <%= course === 'eaee' ? 'selected' : '' %>>Electrical & Electronics Engineering</option>
+            <option value="eai" <%= course === 'eai' ? 'selected' : '' %>>Electronics & Instrumentation</option>
+            <option value="eiace" <%= course === 'eiace' ? 'selected' : '' %>>Electrical And Computer Engineering</option>
+            <option value="eace" <%= course === 'eace' ? 'selected' : '' %>>Electronics And Computer Engineering</option>
+            <option value="eevdat" <%= course === 'eevdat' ? 'selected' : '' %>>Electronics Engineering (VLSI Design & Technology)</option>
+            <option value="safe" <%= course === 'safe' ? 'selected' : '' %>>Safety & Fire Engineering</option>
+            <option value="ft" <%= course === 'ft' ? 'selected' : '' %>>Food Technology</option>
+            <option value="csaeiotacsibct" <%= course === 'csaeiotacsibct' ? 'selected' : '' %>>Computer Science And Engineering (Internet Of Things and Cyber Security Including Block Chain Technology)</option>
+            <option value="iace" <%= course === 'iace' ? 'selected' : '' %>>Instrumentation & Control Engineering</option>
+            <option value="csaeaiads" <%= course === 'csaeaiads' ? 'selected' : '' %>>Computer Science And Engineering (Artificial Intelligence and Data Science)</option>
+            <option value="ie" <%= course === 'ie' ? 'selected' : '' %>>Industrial Engineering</option>
+            <option value="csaeiot" <%= course === 'csaeiot' ? 'selected' : '' %>>Computer Science And Engineering (Internet Of Things)</option>
+            <option value="it" <%= course === 'it' ? 'selected' : '' %>>Information Technology</option>
+            <option value="mea" <%= course === 'mea' ? 'selected' : '' %>>Mechanical Engineering (Automobile)</option>
+            <option value="me" <%= course === 'me' ? 'selected' : '' %>>Mechanical Engineering</option>
+            <option value="mame" <%= course === 'mame' ? 'selected' : '' %>>Metallurgical And Materials Engineering</option>
+            <option value="mee" <%= course === 'mee' ? 'selected' : '' %>>Mechatronics Engineering</option>
+            <option value="pre" <%= course === 'pre' ? 'selected' : '' %>>Production Engineering</option>
+            <option value="pe" <%= course === 'pe' ? 'selected' : '' %>>Polymer Engineering</option>
+            <option value="pt" <%= course === 'pt' ? 'selected' : '' %>>Printing Technology</option>
+            <option value="raai" <%= course === 'raai' ? 'selected' : '' %>>Robotics And Artificial Intelligence</option>
+            <option value="raa" <%= course === 'raa' ? 'selected' : '' %>>Robotics And Automation</option>
+            <option value="naasb" <%= course === 'naasb' ? 'selected' : '' %>>Naval Architecture And Ship Building</option>
+            <option value="ane" <%= course === 'ane' ? 'selected' : '' %>>Aeronautical Engineering</option>
+            <option value="aeai" <%= course === 'aeai' ? 'selected' : '' %>>Applied Electronics And Instrumentation</option>
+            <option value="aiaml" <%= course === 'aiaml' ? 'selected' : '' %>>Artificial Intelligence And Machine Learning</option>
+        </select>
+
+        <button type="submit">Search Colleges</button>
+    </form>
+
+    <% if (colleges.length > 0) { %>
+    <h2>College Name and Rank</h2>
+    <ul>
+        <% colleges.forEach(college => { %>
+            <li>
+                <strong><%= college.name %></strong> - Rank: <%= college[caste] %>
+            </li>
+        <% }); %>
+    </ul>
+    <% } %>
+</body>
+</html>
