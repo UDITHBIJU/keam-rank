@@ -29,11 +29,17 @@ table{
     display: flex;
     justify-content: center;
     align-items: center;
-
+}
+input{
+    border-radius: 8px;
+    border-style: solid;
+}
+select{
+    border-radius: 8px;
 }
 button{
     width: 40%;
-    background-color: #1d9ad4;
+    background-color: #00abfa;
     color: white;
     border-radius: 15px;
     align-items: center;
