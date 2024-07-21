@@ -11,7 +11,7 @@ function findNearestRanks(rank, caste,course) {
 		(a, b) => Math.abs(a[caste] - rank) - Math.abs(b[caste] - rank)
 	);
 
-	const nearestRanks = filtered.slice(0, 5);
+	const nearestRanks = filtered.slice(0, 10);
 
 	return nearestRanks;
 }

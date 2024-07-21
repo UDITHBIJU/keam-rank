@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>College Search</title>
-	<link rel="stylesheet" href="../public/css/style.css">
+	<link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
     <h1 id="head">College Search</h1>
+    <div class="container">
     <form id="collegeForm" action="/colleges" method="POST">
         <label for="rank">Rank:</label>
-        <input type="number" id="rank" name="rank" value="<%= rank %>" required /><br /><br />
-
+        <input type="number" id="rank" name="rank" value="<%= rank %>" required />
+<br>
         <label for="caste">Caste:</label>
         <select name="caste" id="caste">
             <option value="SM" <%= caste === 'SM' ? 'selected' : '' %>>SM</option>
@@ -36,7 +37,7 @@
             <option value="RP" <%= caste === 'RP' ? 'selected' : '' %>>RP</option>
             <option value="DI" <%= caste === 'DI' ? 'selected' : '' %>>DI</option>
         </select>
-
+<br>
         <label for="course">Course:</label>
         <select name="course" id="course">
             <option value="aiad" <%= course === 'aiad' ? 'selected' : '' %>>Artificial Intelligence And Data Science</option>
@@ -89,19 +90,28 @@
             <option value="aeai" <%= course === 'aeai' ? 'selected' : '' %>>Applied Electronics And Instrumentation</option>
             <option value="aiaml" <%= course === 'aiaml' ? 'selected' : '' %>>Artificial Intelligence And Machine Learning</option>
         </select>
-
+<br>
         <button type="submit">Search Colleges</button>
     </form>
+    </div>
 
     <% if (colleges.length > 0) { %>
     <h2>College Name and Rank</h2>
-    <ul>
-        <% colleges.forEach(college => { %>
-            <li>
-                <strong><%= college.name %></strong> - Rank: <%= college[caste] %>
-            </li>
+   
+        <div class="table">
+        <table border="">
+            <tr>
+                <th>College Name</th>
+                <th>Last Rank</th>
+            </tr>
+             <% colleges.forEach(college => { %>
+                <tr>
+            <td> <strong><%= college.name %></strong></td>
+            <td><%= college[caste] %></td>
+              </tr>
         <% }); %>
-    </ul>
+        </table>
+       
     <% } %>
 </body>
 </html>

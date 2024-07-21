@@ -1,0 +1,33 @@
+h1,h2{
+  
+    text-align:  center;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#collegeForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}   
+table{
+   border: 1px solid black;
+   display: flex;
+   justify-content: center;
+    align-items: center;
+    border-collapse: collapse;
+}
+.table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 600px){
+  select{
+    width:100%;
+  }
+      
+}
