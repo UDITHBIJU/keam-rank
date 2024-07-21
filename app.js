@@ -8,11 +8,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/public", express.static("public"));
 app.set("view engine", "ejs");
 
- 
+ let out = ''	; 
  
 // Route to render index.ejs 
 app.get("/", (req, res) => {
-	res.render("index", { colleges: [],rank:'',caste:'',course:''}); // Initial render without colleges
+	res.render("index", { colleges: [],rank:'',caste:'',course:'',out:''}); // Initial render without colleges
 });
 
 app.post("/colleges", (req, res) => {
@@ -20,8 +20,10 @@ app.post("/colleges", (req, res) => {
 
   const colleges = findNearestRanks(rank, caste, course);
 
+  colleges.length>0?out='':out='No colleges found';
+
 console.log(colleges);
-	res.render("index", { colleges ,caste,rank,course}); // Render index.ejs with colleges data
+	res.render("index", { colleges ,caste,rank,course,out}); // Render index.ejs with colleges data
 });
 
 // Start server

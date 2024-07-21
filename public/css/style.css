@@ -25,6 +25,19 @@ table{
     justify-content: center;
     align-items: center;
 }
+.btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+button{
+    width: 40%;
+    background-color: #1d9ad4;
+    color: white;
+    border-radius: 15px;
+    align-items: center;
+}
 @media screen and (max-width: 600px){
   select{
     width:100%;
