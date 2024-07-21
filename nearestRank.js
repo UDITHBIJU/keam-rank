@@ -1,5 +1,8 @@
 import  data from './combined_data.js'
 
+function sortByCaste(array, caste) {
+	return array.sort((a, b) => a[caste] - b[caste]);
+}
 
 
 function findNearestRanks(rank, caste,course) {
@@ -13,7 +16,9 @@ function findNearestRanks(rank, caste,course) {
 
 	const nearestRanks = filtered.slice(0, 10);
 
-	return nearestRanks;
+	const newArray = sortByCaste(nearestRanks,caste)
+
+	return newArray;
 }
 
 export default findNearestRanks;

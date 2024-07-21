@@ -22,7 +22,6 @@ app.post("/colleges", (req, res) => {
 
   colleges.length>0?out='':out='No colleges found';
 
-console.log(colleges);
 	res.render("index", { colleges ,caste,rank,course,out}); // Render index.ejs with colleges data
 });
 
