@@ -13,12 +13,16 @@ h1,h2{
     justify-content: center;
     
 }   
+body{
+    background-color: rgb(149 206 255);
+}
 table{
    border: 1px solid black;
    display: flex;
    justify-content: center;
     align-items: center;
     border-collapse: collapse;
+    background-color: #f1f2ff;
 }
 .table{
     display: flex;
@@ -38,15 +42,27 @@ select{
     border-radius: 8px;
 }
 button{
-    width: 40%;
-    background-color: #00abfa;
+    width: 20%;
+    height: 30px;
+    background-color: #142228;
     color: white;
     border-radius: 15px;
+    font-weight: 900;
     align-items: center;
+    font-size: 16px;
 }
 @media screen and (max-width: 600px){
   select{
     width:100%;
   }
       
+}
+marquee{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-color: yellow;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
