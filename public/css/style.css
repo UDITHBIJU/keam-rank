@@ -66,3 +66,16 @@ marquee{
     margin-top: 15px;
     margin-bottom: 15px;
 }
+pre{
+    margin: 0;
+}
+img{
+   
+}
+.head{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
