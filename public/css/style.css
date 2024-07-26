@@ -83,3 +83,6 @@ pre{
     flex-direction: column;
     justify-content: center;
 }
+.head h1{
+   margin:5PX
+}
