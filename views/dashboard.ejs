@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <title>Upload Files</title>
+</head>
+<body>
+    <h2>Upload Files</h2>
+<div class="container">
+    <form action="/api/upload" method="POST" enctype="multipart/form-data">
+        <label for="name">Select Name:</label>
+        <select name="username" id="name" required>
+            <% names.forEach((name) => { %>
+                <option value="<%= name %>"><%= name %></option>
+            <% }); %>
+        </select>
+        
+        <input type="file" name="file" required>
+        <br>
+        <input type="hidden" name="selected_name" id="selected_name">
+        <br>
+        <button type="submit">Upload</button>
+    </form>
+</div>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function() {
+            document.getElementById("selected_name").value = document.getElementById("name").value;
+        });
+    </script>
+</body>
+</html>

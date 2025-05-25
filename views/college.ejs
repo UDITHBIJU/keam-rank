@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Search</title>
+	<link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <div class="head">
+ <img src="/public/images/logo.png" alt=""> 
+  
+<h1>KEAM 2024 ENGINEEERING OPTION ASSISTANCE</h1> 
+  <h3 id="head">A College Of Engineering Vadakara Initiative</h3>   
+</div>
+   
+    <div class="container">
+    <form id="collegeForm" action="/api/colleges" method="POST"> 
+        <label for="rank">Rank:</label>
+        <input type="number" id="rank" name="rank" value="<%= rank %>" required />
+<br>
+        <label for="category">Category:</label>
+        <select name="category" id="caste" required> 
+            <option value="SM" <%= category=== 'SM' ? 'selected' : '' %>>SM(State Merit)</option>
+            <option value="EW" <%= category=== 'EW' ? 'selected' : '' %>>EW(Economically Weeker Section)</option>
+            <option value="EZ" <%= category=== 'EZ' ? 'selected' : '' %>>EZ(Ezhava)</option>
+            <option value="MU" <%= category=== 'MU' ? 'selected' : '' %>>MU(Muslim)</option>
+            <option value="BH" <%= category=== 'BH' ? 'selected' : '' %>>BH(Other Backward Hindhu)</option>
+            <option value="LA" <%= category=== 'LA' ? 'selected' : '' %>>LA(Latin Catholic and Anglo Indian)</option>
+            <option value="SC" <%= category=== 'SC' ? 'selected' : '' %>>SC(Scheduled caste)</option>
+            <option value="ST" <%= category=== 'ST' ? 'selected' : '' %>>ST(Scheduled Tribes)</option>
+            <option value="DV" <%= category=== 'DV' ? 'selected' : '' %>>DV(Dheevara and related communities)</option>
+            <option value="KU" <%= category=== 'KU' ? 'selected' : '' %>>KU(Kudumbi)</option>
+            <option value="KN" <%= category=== 'KN' ? 'selected' : '' %>>KN(Kusavan and related communities)</option>
+            <option value="VK" <%= category=== 'VK' ? 'selected' : '' %>>VK(Viswakarma and related communities)</option>
+            <option value="BX" <%= category=== 'BX' ? 'selected' : '' %>>BX(Other Backward Christian)</option>
+        </select>
+<br>
+        <label for="ctype">Type</label>
+        <select name="ctype" id="type" required>
+            <option value="G" <%= ctype === 'G' ? 'selected' : '' %>>Government</option>
+            <option value="S" <%= ctype === 'S' ? 'selected' : '' %>>Self Financing</option> 
+        </select>
+<br>
+        <label for="course">Course:</label> 
+        
+       <select name="course" id="course" required>
+    <% names.forEach((name) => { %>
+        <option value="<%= name %>" <%= course === name ? 'selected' : '' %>><%= name %></option>
+    <% }); %>
+</select> 
+
+<br>
+<div class="btn-container">
+     <button type="submit">Search</button>
+</div>
+       
+    </form>
+    </div>
+<marquee behavior="" direction="" scrollamount="10"><pre>Based on keam 2023 phase 1 allotment                          Based on keam 2023 phase 1 allotment                               Based on keam 2023 phase 1 allotment</pre> </marquee>
+<% if (colleges.length > 0) { %>
+    <h2>College Name and Rank</h2>
+   
+        <div class="table">
+        <table border="">
+            <tr> 
+                <th>College Name</th>
+                <th>Last Rank</th>
+                <th>Type</th>
+                <th>category</th>
+            </tr>
+             <% colleges.forEach(college => { %> 
+                <tr>
+            <td> <strong><%= college.college %></strong></td>
+            <td><%= college.rank %></td>
+            <td><%= ctype %></td>
+            <td><%= category %></td>
+              </tr>
+        <% }); %>
+        </table>
+        
+    <% } %>
+    <% if (colleges.length===0) { %>
+     <h2><%= out %></h2>
+    <% } %>
+</body>
+</html>

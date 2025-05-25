@@ -1,0 +1,89 @@
+h1,h2{
+  
+    text-align:  center;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#collegeForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}   
+body{
+    background-color: rgb(149 206 255);
+}
+table{
+   border: 1px solid black;
+   display: flex;
+   justify-content: center;
+    align-items: center;
+    border-collapse: collapse;
+    background-color: #f1f2ff;
+}
+.table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    border-radius: 8px;
+    border-style: solid;
+}
+select{
+    border-radius: 8px;
+}
+button{
+
+    height: 30px;
+    background-color: #142228;
+    color: white;
+    border-radius: 15px;
+    font-weight: 900;
+    align-items: center;
+    font-size: 16px;
+    padding: 5px;
+}
+marquee{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-color: yellow;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+@media screen and (max-width: 600px){
+  select{
+    width:100%;
+  }
+  marquee{
+    font-size: 12px;
+  }
+  
+      
+}
+
+pre{
+    margin: 0;
+}
+
+.head{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.head h1{
+   margin:5PX
+}
+
